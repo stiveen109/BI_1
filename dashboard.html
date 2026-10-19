@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dashboard simulado de novedades académicas de la Universidad Técnica de Cotopaxi.">
+  <meta name="theme-color" content="#075b50">
+  <title>Panel de Novedades Académicas | UTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <nav class="navbar navbar-expand-lg site-nav" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="UTC, inicio"><span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span><span>UTC <span class="brand-divider">/</span> BI</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNavigation"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="index.html">Teoría y quiz</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard académico</a></li></ul></div>
+    </div>
+  </nav>
+
+  <main id="contenido" class="dashboard-main">
+    <header class="dashboard-header"><div class="container"><div class="dashboard-heading-top"><p class="section-kicker">OBSERVATORIO ACADÉMICO · UTC</p><time id="currentDate" datetime="">Actualizando fecha…</time></div><div class="dashboard-title-row"><div><h1>Universidad Técnica de Cotopaxi <span>Panel de Novedades Académicas</span></h1><p>Una lectura integrada de matrícula, trayectoria y actividad universitaria.</p></div><div class="dashboard-actions"><label class="filter-label" for="semesterSelect">PERIODO DE ANÁLISIS</label><select id="semesterSelect" class="form-select" aria-label="Seleccionar semestre"><option value="2025B">Oct 2025 – Mar 2026</option><option value="2025A">Abr – Ago 2025</option><option value="2024B">Oct 2024 – Mar 2025</option></select><button type="button" class="btn btn-export" id="exportReport"><i class="fa-solid fa-download" aria-hidden="true"></i> Exportar reporte</button></div></div><div class="demo-notice"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Datos de demostración con fines educativos; no representan cifras oficiales de la UTC.</div></div></header>
+
+    <section class="container dashboard-content" aria-label="Indicadores y visualizaciones académicas">
+      <div class="kpi-grid">
+        <article class="kpi-card"><div class="kpi-top"><span class="kpi-icon kpi-green"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i></span><span class="trend trend-up" id="trendEnrollment"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> 3,8%</span></div><p class="kpi-label">Estudiantes matriculados</p><p class="kpi-value" id="kpiEnrollment">8.420</p><p class="kpi-note">vs. semestre anterior</p></article>
+        <article class="kpi-card"><div class="kpi-top"><span class="kpi-icon kpi-blue"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span><span class="trend trend-up" id="trendEvents"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> 2 nuevos</span></div><p class="kpi-label">Cursos y eventos este mes</p><p class="kpi-value" id="kpiEvents">14</p><p class="kpi-note">en agenda académica</p></article>
+        <article class="kpi-card"><div class="kpi-top"><span class="kpi-icon kpi-gold"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i></span><span class="trend trend-down" id="trendApproval"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> 0,6 pp</span></div><p class="kpi-label">Tasa de aprobación</p><p class="kpi-value" id="kpiApproval">81,4<span class="kpi-unit">%</span></p><p class="kpi-note">del periodo seleccionado</p></article>
+        <article class="kpi-card"><div class="kpi-top"><span class="kpi-icon kpi-coral"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i></span><span class="trend trend-flat" id="trendFaculty"><i class="fa-solid fa-minus" aria-hidden="true"></i> estable</span></div><p class="kpi-label">Docentes activos</p><p class="kpi-value" id="kpiFaculty">426</p><p class="kpi-note">en todas las facultades</p></article>
+      </div>
+
+      <div class="chart-grid">
+        <article class="chart-panel chart-panel-wide"><div class="panel-heading"><div><p class="panel-overline">DISTRIBUCIÓN</p><h2>Estudiantes por carrera</h2></div><span class="chart-unit">Estudiantes</span></div><div class="chart-canvas chart-canvas-bar"><canvas id="enrollmentChart" role="img" aria-label="Gráfico de barras de estudiantes matriculados por carrera"></canvas></div></article>
+        <article class="chart-panel"><div class="panel-heading"><div><p class="panel-overline">COMPOSICIÓN</p><h2>Modalidad de estudio</h2></div></div><div class="chart-canvas chart-canvas-doughnut"><canvas id="modalityChart" role="img" aria-label="Gráfico de dona de distribución por modalidad"></canvas></div><div class="chart-footnote">La modalidad presencial concentra la mayor matrícula.</div></article>
+        <article class="chart-panel chart-panel-wide"><div class="panel-heading"><div><p class="panel-overline">TENDENCIA</p><h2>Evolución de matrícula</h2></div><span class="chart-unit">Últimos 6 semestres</span></div><div class="chart-canvas chart-canvas-line"><canvas id="trendChart" role="img" aria-label="Gráfico de línea de evolución de matrícula por semestre"></canvas></div></article>
+        <article class="chart-panel"><div class="panel-heading"><div><p class="panel-overline">DESEMPEÑO</p><h2>Promedio por facultad</h2></div><span class="chart-unit">Sobre 10</span></div><div class="chart-canvas chart-canvas-horizontal"><canvas id="facultyChart" role="img" aria-label="Gráfico horizontal del promedio académico por facultad"></canvas></div></article>
+        <article class="chart-panel chart-panel-wide"><div class="panel-heading"><div><p class="panel-overline">TRAYECTORIA ESTUDIANTIL</p><h2>Titulación y deserción</h2></div><span class="chart-unit">Porcentaje por cohorte</span></div><div class="chart-canvas chart-canvas-area"><canvas id="outcomesChart" role="img" aria-label="Gráfico de área de tasas de titulación y deserción"></canvas></div></article>
+      </div>
+
+      <section class="news-section" aria-labelledby="news-title"><div class="news-heading"><div><p class="panel-overline">ACTUALIDAD UNIVERSITARIA</p><h2 id="news-title">Novedades académicas recientes</h2></div><span class="news-count">6 novedades</span></div><div class="table-responsive"><table class="table news-table"><thead><tr><th scope="col">Fecha</th><th scope="col">Carrera / Facultad</th><th scope="col">Evento</th><th scope="col">Estado</th></tr></thead><tbody><tr><td><time datetime="2025-10-16">16 oct 2025</time></td><td>Medicina Veterinaria</td><td>Jornada de actualización en bienestar animal</td><td><span class="status-badge status-done">Realizado</span></td></tr><tr><td><time datetime="2025-10-14">14 oct 2025</time></td><td>Ingeniería Agronómica</td><td>Implementación de módulo de agricultura de precisión</td><td><span class="status-badge status-progress">En curso</span></td></tr><tr><td><time datetime="2025-10-10">10 oct 2025</time></td><td>Contabilidad y Auditoría</td><td>Seminario de gestión tributaria y analítica financiera</td><td><span class="status-badge status-done">Realizado</span></td></tr><tr><td><time datetime="2025-10-08">08 oct 2025</time></td><td>Ingeniería Industrial</td><td>Nuevo laboratorio de procesos y simulación</td><td><span class="status-badge status-new">Inaugurado</span></td></tr><tr><td><time datetime="2025-10-03">03 oct 2025</time></td><td>Enfermería</td><td>Encuentro de prácticas comunitarias interculturales</td><td><span class="status-badge status-progress">En curso</span></td></tr><tr><td><time datetime="2025-09-29">29 sep 2025</td><td>FACIC</td><td>Renovación de acreditación del laboratorio de idiomas</td><td><span class="status-badge status-review">En revisión</span></td></tr></tbody></table></div></section>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a class="footer-brand" href="index.html">UTC <span>/</span> BI</a><p>Universidad Técnica de Cotopaxi — Fundamentos de BI © 2025</p><a href="#contenido" class="back-top" aria-label="Volver al inicio"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>
