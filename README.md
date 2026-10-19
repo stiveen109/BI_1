@@ -28,4 +28,4 @@ Las cifras, carreras y novedades del dashboard son ficticias y se incluyen únic
 
 ## Accesibilidad y compatibilidad
 
-Las páginas incluyen regiones semánticas, enlace para saltar al contenido, etiquetas para controles y descripciones para los canvas. El diseño se adapta a móvil, tablet y escritorio y respeta la preferencia de movimiento reducido del sistema.
+Las páginas incluyen regiones semánticas, enlace para saltar al contenido, etiquetas para controles y descripciones para los canvas. El diseño se adapta a móvil, tablet y escritorio y respeta la preferencia de movimiento reducido del sistema. El botón de tema claro/oscuro conserva la selección en el navegador y se comparte entre ambas páginas.

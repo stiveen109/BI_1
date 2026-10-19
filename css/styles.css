@@ -35,6 +35,9 @@ button, select { font: inherit; }
 .site-nav .nav-link:hover, .site-nav .nav-link.active { color: var(--green); }
 .navbar-toggler { border-color: var(--line); }
 .navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(7, 91, 80, .15); }
+.theme-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 7px 11px; background: transparent; border: 1px solid var(--line); border-radius: 3px; color: var(--green); font-size: 12px; font-weight: 700; cursor: pointer; }
+.theme-toggle:hover { background: var(--mint); }
+.theme-toggle:focus-visible { outline: 3px solid rgba(7, 91, 80, .3); outline-offset: 2px; }
 
 .hero-section { position: relative; overflow: hidden; min-height: 490px; padding: 72px 0 0; background: var(--green-dark); color: #f7fbf8; }
 .hero-section::before { position: absolute; top: -150px; right: 4%; width: 590px; height: 590px; border: 1px solid rgba(209, 235, 221, .18); border-radius: 50%; content: ""; }
@@ -184,3 +187,43 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #e2ece7;
+  --ink-soft: #b4c5bc;
+  --green: #81d2ae;
+  --green-dark: #073e35;
+  --green-bright: #73d4ae;
+  --mint: #1d342c;
+  --mint-light: #1a2d25;
+  --paper: #111d18;
+  --white: #192721;
+  --line: #354a40;
+}
+html[data-theme="dark"] body { background: var(--paper); color: var(--ink); }
+html[data-theme="dark"] .site-nav { background: rgba(17, 29, 24, .97); border-color: var(--line); }
+html[data-theme="dark"] .navbar-brand, html[data-theme="dark"] .site-nav .nav-link { color: #d3e2da; }
+html[data-theme="dark"] .site-nav .nav-link:hover, html[data-theme="dark"] .site-nav .nav-link.active { color: var(--green); }
+html[data-theme="dark"] .navbar-toggler-icon { filter: invert(1); }
+html[data-theme="dark"] .theme-toggle { border-color: #526d60; color: #b8e8d1; }
+html[data-theme="dark"] .theme-toggle:hover { background: #20382e; }
+html[data-theme="dark"] .section-summary, html[data-theme="dark"] .intro-content p:not(.prose-lead), html[data-theme="dark"] .compare-item p, html[data-theme="dark"] .cycle-heading p, html[data-theme="dark"] .decision-cycle p, html[data-theme="dark"] .application-row p { color: var(--ink-soft); }
+html[data-theme="dark"] .prose-lead, html[data-theme="dark"] .compare-item h3, html[data-theme="dark"] .cycle-heading h3, html[data-theme="dark"] .decision-cycle h4, html[data-theme="dark"] .application-row h3 { color: var(--ink); }
+html[data-theme="dark"] .intro-section, html[data-theme="dark"] .etl-section { background: var(--paper); }
+html[data-theme="dark"] .decision-section, html[data-theme="dark"] .applications-section { background: #17251f; }
+html[data-theme="dark"] .insight-panel, html[data-theme="dark"] .compare-item { background: var(--white); }
+html[data-theme="dark"] .insight-panel p:not(.insight-label) { color: #c1d1c8; }
+html[data-theme="dark"] .insight-icon { background: #277e61; }
+html[data-theme="dark"] .versus { background: #1a2922; border-color: var(--line); color: #c0d0c7; }
+html[data-theme="dark"] .decision-cycle li { border-color: #40594d; }
+html[data-theme="dark"] .cycle-icon, html[data-theme="dark"] .application-icon { background: #263b31; color: #9adcbc; }
+html[data-theme="dark"] .etl-step, html[data-theme="dark"] .etl-step:nth-of-type(3), html[data-theme="dark"] .etl-step:nth-of-type(5) { background: #1a2b24; border-color: #344a3e; }
+html[data-theme="dark"] .etl-step > p:not(.etl-english) { color: var(--ink-soft); }
+html[data-theme="dark"] .etl-step h3 { color: var(--ink); }
+html[data-theme="dark"] .tools-strip { background: #1a2922; }
+html[data-theme="dark"] .tools-strip > span:not(.tools-title) { color: #d3e2da; }
+html[data-theme="dark"] .tools-strip p, html[data-theme="dark"] .tools-title { color: #b4c5bc; }
+html[data-theme="dark"] .application-list, html[data-theme="dark"] .application-row { border-color: #354a40; }
+html[data-theme="dark"] .application-no, html[data-theme="dark"] .application-metric { color: #a5b9ae; }
+html[data-theme="dark"] .skip-link { background: #192721; color: var(--ink); }

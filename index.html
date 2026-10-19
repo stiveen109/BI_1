@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Introducción a los fundamentos de Business Intelligence para estudiantes de la Universidad Técnica de Cotopaxi.">
   <meta name="theme-color" content="#075b50">
+  <script>
+    try {
+      if (localStorage.getItem('utc-bi-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+    } catch {}
+  </script>
   <title>Fundamentos de Business Intelligence | UTC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +34,7 @@
           <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard académico</a></li>
           <li class="nav-item"><a class="nav-link" href="#fundamentos">Fundamentos</a></li>
           <li class="nav-item"><a class="nav-link" href="#cuestionario">Cuestionario</a></li>
+          <li class="nav-item"><button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Cambiar a tema oscuro"><i class="fa-solid fa-moon" id="themeIcon" aria-hidden="true"></i><span id="themeLabel">Tema oscuro</span></button></li>
         </ul>
       </div>
     </div>

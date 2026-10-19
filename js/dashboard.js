@@ -135,6 +135,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  function updateChartTheme() {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    const textColor = isDark ? '#b4c5bc' : '#71847a';
+    const gridColor = isDark ? '#34483d' : '#e6ede8';
+    Chart.defaults.color = textColor;
+    Chart.defaults.borderColor = gridColor;
+
+    Object.values(chartInstances).forEach((chart) => {
+      chart.options.color = textColor;
+      Object.values(chart.options.scales || {}).forEach((scale) => {
+        scale.ticks.color = textColor;
+        scale.grid.color = gridColor;
+      });
+      const legendLabels = chart.options.plugins?.legend?.labels;
+      if (legendLabels) legendLabels.color = textColor;
+      chart.update('none');
+    });
+  }
+
+  updateChartTheme();
+  window.addEventListener('themechange', updateChartTheme);
+
   function updateDashboard(semesterKey) {
     const data = semesters[semesterKey] || semesters['2025B'];
     document.getElementById('kpiEnrollment').textContent = data.total;

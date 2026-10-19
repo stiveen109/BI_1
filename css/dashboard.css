@@ -100,3 +100,30 @@
 @media (prefers-reduced-motion: reduce) {
   .chartjs-render-monitor { animation: none !important; }
 }
+
+html[data-theme="dark"] .dashboard-page { background: #111d18; }
+html[data-theme="dark"] .dashboard-header, html[data-theme="dark"] .kpi-card, html[data-theme="dark"] .chart-panel, html[data-theme="dark"] .news-section { background: #192721; border-color: #354a40; }
+html[data-theme="dark"] .dashboard-heading-top { border-color: #354a40; }
+html[data-theme="dark"] .dashboard-heading-top time, html[data-theme="dark"] .dashboard-title-row > div:first-child > p, html[data-theme="dark"] .filter-label, html[data-theme="dark"] .kpi-label, html[data-theme="dark"] .kpi-note, html[data-theme="dark"] .chart-unit, html[data-theme="dark"] .chart-footnote { color: #afc0b7; }
+html[data-theme="dark"] .dashboard-title-row h1, html[data-theme="dark"] .panel-heading h2, html[data-theme="dark"] .news-heading h2, html[data-theme="dark"] .kpi-value { color: #e2ece7; }
+html[data-theme="dark"] .dashboard-actions .form-select { background-color: #1d3028; border-color: #40574a; color: #e2ece7; }
+html[data-theme="dark"] .dashboard-actions .form-select option { background: #192721; color: #e2ece7; }
+html[data-theme="dark"] .btn-export { background: #176b50; border-color: #176b50; color: #fff; }
+html[data-theme="dark"] .demo-notice { background: #38331f; color: #ead99e; }
+html[data-theme="dark"] .trend-up { background: #203b2b; color: #9fe0b3; }
+html[data-theme="dark"] .trend-down { background: #402d26; color: #f0b293; }
+html[data-theme="dark"] .trend-flat { background: #2d3932; color: #c1d0c7; }
+html[data-theme="dark"] .kpi-green { background: #203b2b; color: #9fe0b3; }
+html[data-theme="dark"] .kpi-blue { background: #20333a; color: #a3d2e2; }
+html[data-theme="dark"] .kpi-gold { background: #3b3422; color: #e8cf86; }
+html[data-theme="dark"] .kpi-coral { background: #3d2b27; color: #efb09c; }
+html[data-theme="dark"] .panel-overline, html[data-theme="dark"] .news-table thead th { color: #aabbb2; }
+html[data-theme="dark"] .news-count { background: #2a3b31; color: #c4d7cb; }
+html[data-theme="dark"] .news-table { --bs-table-bg: #192721; --bs-table-color: #d4e2db; --bs-table-border-color: #34483d; color: #d4e2db; }
+html[data-theme="dark"] .news-table thead th { background: #202f28; border-color: #3a4e42; }
+html[data-theme="dark"] .news-table tbody td { border-color: #2e4136; }
+html[data-theme="dark"] .news-table time { color: #b4c5bc; }
+html[data-theme="dark"] .status-done { background: #203b2b; color: #a8ddb4; }
+html[data-theme="dark"] .status-progress { background: #20353c; color: #a7d0df; }
+html[data-theme="dark"] .status-new { background: #3b3422; color: #e8cf86; }
+html[data-theme="dark"] .status-review { background: #3d2b27; color: #efb09c; }
